@@ -29,6 +29,7 @@
       become: yes
       become_user: root
       unarchive:
+        remote_src: yes
         src: /tmp/{{ sonarqube_zip }}
         dest: '{{ sonarqube_parent_install_dir }}'
         creates: '{{ sonarqube_install_dir }}'
