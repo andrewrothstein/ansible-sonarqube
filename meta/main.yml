@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: sonarqube
   author: Andrew Rothstein
   description: installs sonarqube
   company: BlackRock Financial Management
