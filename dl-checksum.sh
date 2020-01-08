@@ -13,7 +13,4 @@ dl_ver() {
     printf "  '%s': sha1:%s\n" $ver $(curl -sSL $url)
 }
 
-#dl_ver ${1:-8.0}
-dl_ver 7.8
-dl_ver 7.9
-dl_ver 8.0
+dl_ver ${1:-8.1.0.31237}
