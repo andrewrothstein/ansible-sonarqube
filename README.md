@@ -1,6 +1,6 @@
 andrewrothstein.sonarqube
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-sonarqube.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-sonarqube)
+![Build Status](https://github.com/andrewrothstein/ansible-sonarqube/actions/workflows/build.yml/badge.svg)
 
 Installs [SonarQube](https://www.sonarqube.org/)
 
