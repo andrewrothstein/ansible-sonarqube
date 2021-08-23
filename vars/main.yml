@@ -2,6 +2,7 @@
 # vars file for sonarqube
 sonarqube_name: sonarqube-{{ sonarqube_ver }}
 sonarqube_zip: '{{ sonarqube_name }}.zip'
+sonarqube_tmp_zip: /tmp/{{ sonarqube_zip }}
 sonarqube_url: '{{ sonarqube_mirror }}/{{ sonarqube_zip }}'
 sonarqube_checksum: '{{ sonarqube_checksums[sonarqube_ver] }}'
 sonarqube_install_dir: '{{ sonarqube_parent_install_dir }}/{{ sonarqube_name }}'

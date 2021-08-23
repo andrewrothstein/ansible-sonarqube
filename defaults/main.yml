@@ -1,6 +1,6 @@
 ---
 # defaults file for sonarqube
-sonarqube_ver: '8.1.0.31237'
+sonarqube_ver: '9.0.1.46107'
 sonarqube_mirror: https://binaries.sonarsource.com/Distribution/sonarqube
 sonarqube_parent_install_dir: /usr/local
 sonarqube_platform: linux-x86-64
@@ -13,3 +13,5 @@ sonarqube_checksums:
   '8.0': sha1:8b0efcddf26d072192f8bf1c91a2f585438a4775
   # https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.1.0.31237.zip.sha
   '8.1.0.31237': sha1:a67fe7fc79c353c5bb1a9979f1c09eb50232fb22
+  # https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.0.1.46107.zip
+  '9.0.1.46107': sha256:cb27f3230c8126f7082b89a7d018734b59321821e150a50c016e5cb887e68c5c

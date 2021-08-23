@@ -9,7 +9,7 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- name: check for install
+- name: check for install in {{ sonarqube_install_dir }}
   become: yes
   stat:
     path: '{{ sonarqube_install_dir }}'
@@ -17,30 +17,30 @@
   register: sonarqube_binary
 - when: not sonarqube_binary.stat.exists
   block:
-    - name: downloading...
+    - name: downloading {{ sonarqube_url }}
       become: yes
       become_user: root
       get_url:
         url: '{{ sonarqube_url }}'
-        dest: /tmp/{{ sonarqube_zip }}
+        dest: '{{ sonarqube_tmp_zip }}'
         checksum: '{{ sonarqube_checksum }}'
         mode: 0644
-    - name: unarchive
+    - name: unarchive {{ sonarqube_tmp_zip }}
       become: yes
       become_user: root
       unarchive:
         remote_src: yes
-        src: /tmp/{{ sonarqube_zip }}
+        src: '{{ sonarqube_tmp_zip }}'
         dest: '{{ sonarqube_parent_install_dir }}'
         creates: '{{ sonarqube_install_dir }}'
   always:
-    - name: cleanup
+    - name: rm {{ sonarqube_tmp_zip }}
       become: yes
       become_user: root
       file:
-        path: /tmp/{{ sonarqube_zip }}
+        path: '{{ sonarqube_tmp_zip }}'
         state: absent
-- name: link
+- name: linking {{ sonarqube_link_dir }} to {{ sonarqube_install_dir }}
   become: yes
   become_user: root
   file:
